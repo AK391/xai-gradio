@@ -1,6 +1,6 @@
 # `xai-gradio`
 
-is a Python package that makes it very easy for developers to create machine learning apps that are powered by various AI model providers' APIs.
+is a Python package that makes it very easy for developers to create machine learning apps that are powered by XAI API.
 
 # Installation
 
@@ -14,14 +14,10 @@ That's it!
 
 # Basic Usage
 
-Just like if you were to use the provider's API directly, you should first save your API key to the appropriate environment variable:
+You'll need to save your xAI API key to the appropriate environment variable:
 
 ```bash
-# For OpenAI
-export OPENAI_API_KEY=<your token>
-# For Anthropic
-export ANTHROPIC_API_KEY=<your token>
-# For other providers...
+export XAI_API_KEY=<your token>
 ```
 
 Then in a Python file, write:
@@ -31,7 +27,7 @@ import gradio as gr
 import xai_gradio
 
 gr.load(
-    name='gpt-4-turbo',  # or 'claude-3-opus', etc.
+    name='grok-beta',
     src=xai_gradio.registry,
 ).launch()
 ```
@@ -81,26 +77,18 @@ The `xai-gradio` Python library supports multiple AI providers through their res
 
 # Supported Models and Providers
 
-The following AI providers and their models are currently supported:
+The following AI models are currently supported:
 
-- OpenAI (GPT-4, GPT-3.5, etc.)
-- Anthropic (Claude 3, etc.)
-- [List other supported providers]
+- xAI (Grok-beta)
 
-For a comprehensive list of available models and their specifications, please refer to each provider's documentation:
-- [OpenAI Models](https://platform.openai.com/docs/models)
-- [Anthropic Models](https://docs.anthropic.com/claude/docs/models-overview)
-- [Other provider docs...]
+For a comprehensive list of available models and their specifications, please refer to:
+- [xAI Models](https://console.xai.com/models)
 
 -------
 
-Note: if you are getting authentication errors, ensure you have set the correct environment variable for your chosen provider. You can also set them in your Python session:
+Note: if you are getting authentication errors, ensure you have set the correct environment variable. You can also set it in your Python session:
 
 ```python
 import os
-
-# For OpenAI
-os.environ["OPENAI_API_KEY"] = ...
-# For Anthropic
-os.environ["ANTHROPIC_API_KEY"] = ...
+os.environ["XAI_API_KEY"] = ...
 ```
