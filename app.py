@@ -1,7 +1,7 @@
 import gradio as gr
-import openai_gradio
+import xai_gradio
 
 gr.load(
-    name='gpt-4-turbo',
-    src=openai_gradio.registry,
+    name='grok-beta',
+    src=xai_gradio.registry,
 ).launch()
