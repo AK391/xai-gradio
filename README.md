@@ -71,7 +71,8 @@ demo.launch()
 
 # Under the Hood
 
-The `xai-gradio` Python library supports multiple AI providers through their respective Python SDKs. It defines a "registry" function `xai_gradio.registry`, which takes in a model name and returns a Gradio app.
+The xai-gradio Python library has two dependencies: openai and gradio. It defines a "registry" function xai_gradio.registry, 
+which takes in a model name and returns a Gradio app.
 
 # Supported Models and Providers
 
